@@ -1,10 +1,10 @@
-package br.thullyoo.desafio_backend_fcamara;
+package br.thullyoo.vehicles_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DesafioBackendFcamaraApplicationTests {
+class VehiclesServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
