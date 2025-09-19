@@ -32,9 +32,9 @@ public class Establishment {
 
     @JsonProperty(namespace = "motorcycleParkingSpaces")
     @Column(name = "motorcycle_parking_spaces")
-    private String motorcycleParkingSpaces;
+    private Long motorcycleParkingSpaces;
 
     @JsonProperty(namespace = "carParkingSpaces")
     @Column(name = "car_parking_spaces")
-    private String carParkingSpaces;
+    private Long carParkingSpaces;
 }
