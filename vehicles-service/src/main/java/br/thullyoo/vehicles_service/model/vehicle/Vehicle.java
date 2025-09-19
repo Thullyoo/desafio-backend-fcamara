@@ -34,4 +34,8 @@ public class Vehicle {
     @JsonProperty(namespace = "licensePlate")
     @Column(name = "license_plate", unique = true)
     public String licensePlate;
+
+    @JsonProperty(namespace = "establishmentId")
+    @Column(name = "establishment_id")
+    private UUID establishmentId;
 }
