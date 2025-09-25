@@ -1,4 +1,4 @@
-package br.thullyoo.vehicles_service.config;
+package br.thullyoo.establishment_service.config;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class KafkaConfig {
     @Autowired
     private KafkaProperties kafkaProperties;
 
-    private final String vehicleTopic = "vehicle-service-topic";
+    private final String establishmentTopic = "establishment-service-topic";
 
     @Bean
     public ProducerFactory<String, String> producerFactory(){
@@ -32,11 +32,12 @@ public class KafkaConfig {
     }
 
     @Bean
-    public NewTopic vehicleTopicBuilder() {
+    public NewTopic establishmentTopicBuilder() {
         return TopicBuilder
-                .name(vehicleTopic)
+                .name(establishmentTopic)
                 .partitions(1)
                 .replicas(1)
                 .build();
     }
+
 }
