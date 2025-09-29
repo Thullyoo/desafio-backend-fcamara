@@ -4,6 +4,7 @@ import br.thullyoo.vehicles_service.dto.VehicleCreateRequest;
 import br.thullyoo.vehicles_service.dto.VehicleUpdateRequest;
 import br.thullyoo.vehicles_service.model.vehicle.Vehicle;
 import br.thullyoo.vehicles_service.services.VehicleService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,6 +35,11 @@ public class VehicleController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") UUID id) {
         vehicleService.delete(id);
+    }
+
+    @PostMapping("/assign-driver")
+    public void assignDriver(@RequestParam("licensePlate") String licensePlate, @RequestParam("establishmentId") UUID establishmentId, @RequestParam("type") String type) throws JsonProcessingException {
+        vehicleService.registerVehicleAtEstablishment(licensePlate, type,  establishmentId);
     }
 
 }
