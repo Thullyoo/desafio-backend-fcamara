@@ -1,1 +1,17 @@
-spring.application.name=api-gateway-vehicle-establishment
+server:
+  port: 8082
+
+spring:
+  application:
+    name: api-gateway-vehicle-establishment
+  cloud:
+    gateway:
+      routes:
+        - id: vehicle
+          predicates:
+            - Path=/vehicle/
+          uri: http://localhost:8080/api/vehicles
+        - id: establishment
+          predicates:
+            - Path=/establishment/
+          uri: http://localhost:8081/api/establishment
